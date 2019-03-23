@@ -1,0 +1,12 @@
+.UserOutput {
+    display: inline-block;
+    margin: 20px;
+    padding: 15px;
+    border: 1px blueviolet double;
+    border-radius: 5px;
+    background-color: mintcream;
+    box-shadow: 2px 4px lightgrey;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: 500;
+}

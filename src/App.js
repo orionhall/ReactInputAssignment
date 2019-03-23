@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import UserOutput from './UserOutput/UserOutput';
+import UserInput from './UserInput/UserInput';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    state = {
+        username: 'fartButt'
+    };
+
+    usernameChangeHandler = (event) => {
+        this.setState({
+            username: event.target.value
+        });
+    };
+
+    render () {
+        const inputStyle = {
+            border: '5px dotted #999',
+            borderRadius: '3',
+            display: 'inline-block',
+            textAlign: 'center',
+            alignSelf: 'center'
+        };
+        return (
+            <div className="App">
+                <UserOutput username={this.state.username}/>
+                <UserOutput username={this.state.username}/>
+                <UserInput change={this.usernameChangeHandler} value={this.state.username} style={inputStyle}/>
+            </div>
+        );
+    }
 }
 
 export default App;
